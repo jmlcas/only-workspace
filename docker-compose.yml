@@ -17,7 +17,7 @@ services:
 
   onlyoffice-community-server:
     container_name: onlyoffice-community-server
-    image: onlyoffice/communityserver:latest
+    image: onlyoffice/communityserver:12.6.0.1900
     depends_on:
      - onlyoffice-mysql-server
      - onlyoffice-document-server
@@ -57,7 +57,7 @@ services:
      - ./certs:/var/www/onlyoffice/Data/certs
 
   onlyoffice-elasticsearch:
-    image: onlyoffice/elasticsearch:latest
+    image: onlyoffice/elasticsearch:7.16.3
     container_name: onlyoffice-elasticsearch
     restart: unless-stopped
     environment:
@@ -84,7 +84,7 @@ services:
 
   onlyoffice-document-server:
     container_name: onlyoffice-document-server
-    image: onlyoffice/documentserver:latest
+    image: onlyoffice/documentserver:8.1
     stdin_open: true
     tty: true
     restart: unless-stopped
@@ -108,7 +108,7 @@ services:
     depends_on:
      - onlyoffice-document-server
      - onlyoffice-community-server
-    image: onlyoffice/controlpanel:latest
+    image: onlyoffice/controlpanel:3.5.2.530    
     environment:
      - ONLYOFFICE_CORE_MACHINEKEY=core_secret
     expose:
