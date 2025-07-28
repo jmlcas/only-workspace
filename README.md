@@ -1,6 +1,6 @@
 # OnlyOffice Workspace
 
-Ver en "hhtp://localhost:8300"
+Ver en "http://localhost:8300"
 
 
 
